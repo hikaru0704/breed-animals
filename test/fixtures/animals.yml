@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sex: MyString
+  age: MyString
+  breed: MyString
+  chronic_illness: MyString
+  attend_the_hospital: MyString
+  vaccine: MyString
+  blood_test: MyString
+
+two:
+  name: MyString
+  sex: MyString
+  age: MyString
+  breed: MyString
+  chronic_illness: MyString
+  attend_the_hospital: MyString
+  vaccine: MyString
+  blood_test: MyString
