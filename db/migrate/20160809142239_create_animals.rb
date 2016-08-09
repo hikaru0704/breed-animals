@@ -3,12 +3,14 @@ class CreateAnimals < ActiveRecord::Migration
     create_table :animals do |t|
       t.string :name
       t.string :sex
-      t.string :age
+      t.integer :age
       t.string :breed
       t.string :chronic_illness
       t.string :attend_the_hospital
       t.string :vaccine
       t.string :blood_test
+      t.references :user
+      t.references :animal_type
 
       t.timestamps null: false
     end
