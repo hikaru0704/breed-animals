@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'medical_records/new'
+
   root to: 'static_pages#login'
   get 'signup', to: 'users#new'
   get 'login' , to: 'static_pages#login'
