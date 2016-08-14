@@ -13,6 +13,7 @@ class CreateAnimals < ActiveRecord::Migration
       t.references :animal_type
 
       t.timestamps null: false
+      t.index [:animal_type_id, :created_at]
     end
   end
 end

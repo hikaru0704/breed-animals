@@ -6,7 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :sex
       t.integer :age
-      t.refarences :animal
+      t.references :animal
 
       t.timestamps null: false
     end

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'medical_records/new'
 
   root to: 'static_pages#login'
   get 'signup', to: 'users#new'
@@ -8,4 +7,5 @@ Rails.application.routes.draw do
   delete 'logout', to: 'static_pages#destroy'
   
   resources :users
+  resources :animals
 end

@@ -1,8 +1,5 @@
 class StaticPagesController < ApplicationController
 
-  def login
-  end
-  
   def create
     @user = User.find_by(email: params[:session][:email].downcase)
     if @user && @user.authenticate(params[:session][:password])
@@ -18,5 +15,9 @@ class StaticPagesController < ApplicationController
   def destroy
     session[:user_id] = nil
     redirect_to root_path
+  end
+  
+    def home
+    @animal_type = current_user.animal_types.build if logged_in?
   end
 end

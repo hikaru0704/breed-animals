@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   
+  def edit
+    @user = User.find(params[:id])
+  end
+  
   def show
     @user = User.find(params[:id])
   end
@@ -9,9 +13,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    puts "----------------------------"
     @user = User.new(user_params)
-    puts "^^^^^^^^^^^^^^^^^^^^^^^^"
     if @user.save
       redirect_to @user
     else
