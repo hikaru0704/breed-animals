@@ -1,16 +1,15 @@
 class AnimalsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy, :update]
+  before_action :logged_in_user, only: [:create, :destroy, :update, :new]
+  before_action :set_animal, only: [:show, :edit, :destroy, :update]
   
   def index
     @animals = Animal.all
   end
   
   def edit
-    @animal = Animal.find(params[:id])
   end  
   
   def show
-    @animal = Animal.find(params[:id])
   end
   
   def new
@@ -19,19 +18,32 @@ class AnimalsController < ApplicationController
   
   def create
     @animal = Animal.new(animal_params)
-    @animal.save
-    redirect_to animals_path
+    if @animal.save
+      redirect_to animals_path
+    else
+      render 'new'
+    end
   end
   
   def destroy
-    @animal = Animal.find(params[:id])
     @animal.destroy
     redirect_to animals_path
   end
   
+  def update
+    if @animal.update(animal_params)
+      redirect_to animal_path
+    else
+      render 'edit'
+    end
+  end
+  
   private
   def animal_params
-    params.require(:animal).permit(:name, :age, :sex, :breed, :chronic_illness)
+    params.require(:animal).permit(:name, :age, :sex, :breed, :animal_type_id, :chronic_illness)
   end
-
+  
+  def set_animal
+     @animal = Animal.find(params[:id])
+  end
 end

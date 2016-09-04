@@ -14,7 +14,6 @@
           <td><%= animal.name %></td>
           <td><%= link_to 'Show', animal %></td>
           <td><%= link_to 'Edit', edit_animal_path(animal) %></td>
-          <!-- 削除ボタンにクラスを追加 -->
           <td><%= link_to 'Destroy', animal, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
         </tr>
       <% end %>

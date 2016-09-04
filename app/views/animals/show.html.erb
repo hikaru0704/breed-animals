@@ -1,2 +1,46 @@
-<h1>カルテ</h1>
-<h2><%= @animal.name %></h2>
+<%= form_for @animal do |f| %>
+
+  <div class="row">
+  <aside class="col-md-4">
+      <h1>
+        <%= @animal.name %>
+      </h1>
+　　　　
+　　　　<div class="form-horizontal" role="form" style="clear:left;">
+         <div class="form-group">
+           <%= f.label :性別, :class => "col-sm-3 countrol-label" %>
+           <div class="col-sm-7">
+             <%= f.text_field :sex, :readonly => true, :class => "form-control" %>
+            </div>
+         </div>
+
+         <div class="form-group">
+           <%= f.label :年齢, :class => "col-sm-3 countrol-label" %>
+           <div class="col-sm-7">
+             <%= f.text_field :age, :readonly => true, :class => "form-control" %>
+           </div>
+         </div>
+
+         <div class="form-group">
+           <%= f.label :種類, :class => "col-sm-3 countrol-label" %>
+           <div class="col-sm-7">
+             <%= f.text_field :breed, :readonly => true, :class => "form-control" %>
+           </div>
+         </div>
+         
+         <div class="form-group">
+           <%= f.label :感染症, :class => "col-sm-3 countrol-label" %>
+           <div class="col-sm-7">
+             <%= f.text_field :chronic_illness, :readonly => true, :class => "form-control" %>
+           </div>
+         </div>
+         
+          <div class="form-group">
+           <%= f.label :動物種, :class => "col-sm-3 countrol-label" %>
+           <div class="col-sm-7">
+             <%= f.text_field :animal_type_id, :readonly => true, :class => "form-control" %>
+           </div>
+         </div>
+<% end %>
+
+</div>
